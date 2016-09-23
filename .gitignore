@@ -20,6 +20,9 @@ buildNumber.properties
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+.idea/dbnavigator.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
