@@ -67,7 +67,7 @@ $(document).ready(function() {
               '</div>' +
               "</div>" +
               '<div class="halla">' +
-              '<svg-icon class="testaroo"><src href="si-glyph-bicycle-1.svg" /></svg-icon>' +
+              '<svg-icon class="testaroo"><src href="/Leiesykkel/si-glyph-bicycle-1.svg" /></svg-icon>' +
               "</div>" +
               '<div class="reservasjonButton" id="button' + data[i].id + '">' +
               '<p class="button-text">Reserver sykkel</p>' +
