@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Logg inn</title>
+        <script src="http://code.jquery.com/jquery-1.12.3.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script type="text/javascript" src="Login/Login.js"></script>
+
+
+    </head>
+    <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/index.html">Hjem</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/info.html">Info <span class="sr-only">(current)</span></a></li>
+
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+    </nav>
+
+        <div id="login-overlay" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Logg inn</h4>
+
+                    <div id="loginForm"> <!--method="POST"><!--action="/home.html"method="POST"  novalidate="novalidate"-->
+                        <div class="form-group">
+                            <label for="username" class="control-label">Brukernavn</label>
+                            <input type="text" class="form-control" id="username" name="username" value="" required="" title="Skriv inn brukernavn" placeholder="example@gmail.com">
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label">Passord</label>
+                            <input type="password" class="form-control" id="password" name="password" value="" required="" title="Skriv inn passord">
+                            <span class="help-block"></span>
+                        </div>
+                        <!--<div id="loginErrorMsg" class="alert alert-error hide">Feil brukernavn og passord</div>-->
+                        <button type="submit" id="TESTTEST" class="btn btn-block">Logg inn</button>
+                     </div>
+                    <br>
+                    <button type="button" id="registrer" class="btn btn-block">Registrer bruker</button>
+
+                </div>
+            </div>
+        </div>
+        <div id="reg-overlay" class="modal-dialog" style="display: none">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Registrer</h4>
+
+                    <div id="regForm"> <!--method="POST"><!--action="/home.html"method="POST"  novalidate="novalidate"-->
+                        <div class="form-group">
+                            <label for="username" class="control-label">Brukernavn</label>
+                            <input type="text" class="form-control" id="username1" name="username" value="" required="" title="Skriv inn brukernavn" placeholder="example@gmail.com">
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label">Passord</label>
+                            <input type="password" class="form-control" id="password1" name="password" value="" required="" title="Skriv inn passord">
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label">Gjenta passord</label>
+                            <input type="password" class="form-control" id="password2" name="password" value="" required="" title="Gjenta passord">
+                            <span class="help-block"></span>
+                        </div>
+                        <button type="submit" id="regknapp" class="btn btn-block">Registrer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
+
