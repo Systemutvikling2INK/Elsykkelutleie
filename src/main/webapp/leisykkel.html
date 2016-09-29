@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="//code.jquery.com/jquery-1.12.3.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="Leiesykkel/style.css" media="screen" title="no title">
+    <title>Bike renting</title>
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="Home/home.css">
-    <script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script type="text/javascript" src="Midlertidig/Bike.js"></script>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script type="text/javascript" src="Leiesykkel/bikehalla.js"></script>
+    <script type="text/javascript" src="bikeicon/iconwc.js"></script>
 
-
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -30,7 +30,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/leisykkel.html">Lei sykkel <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Lei sykkel <span class="sr-only">(current)</span></a></li>
 
                 <li class="dropdown">
                     <a href="/trheim.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kart <span class="caret"></span></a>
@@ -53,6 +53,42 @@
 
     </div><!-- /.container-fluid -->
 </nav>
+
+
+
+<div class="innhold container">
+    <div class="inniBoksen container">
+        <p>Velg parkeringsplass:<p/>
+        <select class="form-control parking-selection">
+
+
+        </select>
+    </div>
+    <div id="res-text-info">
+        <p>Trykk på en sykkel for å reservere den:</p>
+    </div>
+
+    <div id="ingen-sykler">
+        <p>Det er ingen ledige sykler ved den valgte parkeringsplassen.</p>
+    </div>
+
+    <div class="sykler">
+
+    </div>
+
+
+
+</div>
+
+<div id="mørkbakgrunn">
+    <div id="meldingsboks">
+        <a id="kryssboks" href="#">x</a>
+
+        <p id="informasjon-res">Reservere sykkel nr....</p>
+        <div id="buttonja" class="button-melding">Ja</div>
+        <div id="buttonnei" class="button-melding">Nei</div>
+    </div>
+</div>
 
 </body>
 </html>
