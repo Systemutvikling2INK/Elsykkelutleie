@@ -63,8 +63,8 @@ $(document).ready(function() {
               '<div class="progress progress-boks">' +
               '<div class="progress-bar batteryBar ' + progressBarKlasse + '" id="' + data[i].id + '" role="progressbar" aria-valuenow="' + bikeProgress + '"' +
               'aria-valuemin="0" aria-valuemax="100" style="width: ' + bikeProgress + '%">' +
-              bikeProgress + '%' +
               '</div>' +
+              '<p class="progressbar-text">' + bikeProgress + '%</p>' +
               "</div>" +
               '<div class="halla">' +
               '<svg-icon class="testaroo"><src href="/Leiesykkel/si-glyph-bicycle-1.svg" /></svg-icon>' +

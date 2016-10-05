@@ -136,14 +136,24 @@ body, head {
 .progress-boks {
   margin: 5px;
   width: 50%;
+  position: relative;
 }
 
 .batteryBar {
+  position: absolute;
+
+  color: black;
   /*margin: 5px;
   width: 40%;*/
   /*height: 10px;*/
   /*width: 70%;*/
   height: 100%;
+}
+
+.progressbar-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
 }
 
 .reservasjonButton {
@@ -214,7 +224,7 @@ body, head {
 }
 
 #meldingsboks {
-  width: 20%;
+
   color: cadetblue;
   background: white;
   top: 25%;
@@ -223,6 +233,24 @@ body, head {
   padding: 50px;
 
   border-radius: 5px;
+}
+
+@media screen and (min-width: 200px) {
+  #meldingsboks {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #meldingsboks {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #meldingsboks {
+    width: 20%;
+  }
 }
 
 #informasjon-res {
