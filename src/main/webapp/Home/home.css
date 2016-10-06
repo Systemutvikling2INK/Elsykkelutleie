@@ -41,3 +41,9 @@
     background-color: #5bacd9;
     border: 2px solid #5bacd9;
 }
+
+@media screen and (max-width: 1366px) {
+    #bear-bike {
+        height: 250px;
+    }
+}
