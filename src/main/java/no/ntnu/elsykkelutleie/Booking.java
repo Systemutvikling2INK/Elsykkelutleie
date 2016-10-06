@@ -7,26 +7,31 @@ import java.util.Date;
  */
 public class Booking {
 
-    private Date startBooking;
-    private Date delivery;
+    private Date bookingStart;
+    private String code;
 
     public Booking() {
 
     }
 
-    public Date getStartBooking() {
-        return startBooking;
+    public Booking(Date bookingStart, String code) {
+        this.bookingStart = bookingStart;
+        this.code = code;
     }
 
-    public void setStartBooking(Date booking) {
-        startBooking = booking;
+    public Date getBookingStart() {
+        return bookingStart;
     }
 
-    public Date getDelivery() {
-        return delivery;
+    public void setBookingStart(Date booking) {
+        bookingStart = booking;
     }
 
-    public void setDelivery(Date delivery) {
-        this.delivery = delivery;
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String newCode) {
+        code = newCode;
     }
 }

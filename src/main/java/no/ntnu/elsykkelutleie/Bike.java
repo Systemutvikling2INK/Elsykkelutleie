@@ -7,7 +7,8 @@ public class Bike {
 
     private int id;
     private double batteryPercentage;
-    private boolean inUse = false;
+    private boolean inUse = false; //Is set to true if the user booked a bike, and within 30minutes claimed the it.
+    private Booking booking;
 
     public Bike() {
 
