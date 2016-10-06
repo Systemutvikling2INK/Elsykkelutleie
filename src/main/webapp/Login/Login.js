@@ -48,7 +48,7 @@ $(document).ready(function() {
                             okbruk = true;
                             var lagre = $.ajax({
                                 type: "POST",
-                                url: "Login/Login.json",
+                                url: "rest/User",
                                 data: '{"userName": "' + username + '", "password" : "' + password + '"}',
                                 contentType: 'application/json; charset=utf-8',
                                 dataType: 'json',
