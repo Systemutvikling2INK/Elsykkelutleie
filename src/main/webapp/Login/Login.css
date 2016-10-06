@@ -1,0 +1,21 @@
+.modal-dialog {
+    margin-top: 10%;
+}
+
+@media screen and (min-width: 0px) {
+    .modal-dialog {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .modal-dialog {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .modal-dialog {
+        width: 20%;
+    }
+}

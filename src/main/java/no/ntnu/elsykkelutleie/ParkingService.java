@@ -138,10 +138,6 @@ public class ParkingService {
     public String getDeliveryCode(@PathParam("id") int id, @PathParam("bikeId") int bikeId) {
         if (parkingMap.get(id) != null && parkingMap.get(id).getBike(bikeId) != null) {
             Bike biken = parkingMap.get(id).getBike(bikeId);
-
-            System.out.println(biken.isInUse());
-            System.out.println(biken.getReservationCode());
-
             if (biken.getBooking() != null) {
                 return biken.getReservationCode();
             }

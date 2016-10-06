@@ -76,7 +76,7 @@ public class Bike {
         }
     }
 
-    public boolean receiveBike(String bikeCode) {
+    public boolean receiveBike(String bikeCode) {//TODO: legge inn at man må være innenfor 30min etter man har leid sykkelen
         if (bikeCode.equals(getReservationCode())) {
             inUse = true;
             return true;
