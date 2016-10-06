@@ -3,6 +3,7 @@ package no.ntnu.elsykkelutleie;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -94,6 +95,20 @@ public class ParkingService {
     public void addBikeToParking(@PathParam("id") int id, Bike bike) {/*@PathParam("id") int id, @PathParam("bikeId") int bikeId, double batteryPercentage) {*/
         //parkingMap.get(id).addBike(new Bike(bikeId, batteryPercentage));
         parkingMap.get(id).addBike(bike);
+    }
+
+    @POST
+    @Path("/{id}/bikes/{bikeId}/reserver")
+    public void reserverBike(@PathParam("id") int id, @PathParam("bikeId") int bikeId) {
+        if (parkingMap.get(id) != null && parkingMap.get(id).getBike(bikeId) != null) {
+            Bike biken = parkingMap.get(id).getBike(bikeId);
+            if (biken.getInUse()) {
+                parkingMap.get(id).getBike(bikeId).reserveBike();
+            } else {
+                throw new javax.ws.rs.NotFoundException("Bike is already in use :(");
+            }
+
+        }
     }
 
     /*@DELETE
