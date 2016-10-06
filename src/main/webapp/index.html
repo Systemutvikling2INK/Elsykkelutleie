@@ -11,11 +11,11 @@
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script type="text/javascript" src="Midlertidig/Bike.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="navigationbar.css">
 
 </head>
 <body>
-<nav class="navbar navbar-default" style="background-color: #afd2ec">
+<nav class="navbar navbar-default navigationbar">
     <div class="container-fluid">
 
         <div class="navbar-header">
@@ -26,9 +26,9 @@
                 <span class="icon-bar"></span>
             </button>
             <p>
-                <a class="navbar-brand" href="/index.html" style="color: black">
+                <a class="navbar-brand svarttekst" id="svarttekst2" href="/index.html">
                     BearCycle
-                    <img src="LOGO.png" style="width: 32px; height: 32px; float:left" href="/index.html">
+                    <img id="bear-logo" src="LOGO.png" href="/index.html">
                 </a>
             </p>
 
@@ -42,14 +42,15 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-            <li><a class="navbar-brand" href="/Login.html" style="color: black">Logg inn <span class="sr-only">(current)</span></a></li>
+            <li><a class="navbar-brand svarttekst" href="/Login.html">Logg inn <span class="sr-only">(current)</span></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
 
     </div><!-- /.container-fluid -->
 </nav>
-<img style="margin-left: 38%; margin-bottom: 0;" src="bear-on-bike.png">
-<p id="navntest">Bearcycle</p>
+<img id="bear-img" src="bear-on-bike.png">
+<p id="navntest">BearCycle</p>
 <p id="tekstunder">Elsykkelutleie i Trondheim.</p>
+<p>KNAPP: LEIE SYKKEL</p>
 </body>
 </html>

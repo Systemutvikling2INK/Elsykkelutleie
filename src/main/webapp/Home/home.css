@@ -11,5 +11,10 @@
 
 #tekstunder {
     text-align: center;
-    font-size: 200%;
+    font-size: 150%;
+}
+
+#bear-img {
+    margin-left: 38%;
+    margin-bottom: 0;
 }

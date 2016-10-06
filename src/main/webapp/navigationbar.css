@@ -1,0 +1,17 @@
+.navigationbar {
+    background-color: #afd2ec;
+}
+
+.svarttekst {
+    color: black;
+}
+
+#svarttekst2 {
+    color: black;
+}
+
+#bear-logo {
+    width: 32px;
+    height: 32px;
+    float: left;
+}
