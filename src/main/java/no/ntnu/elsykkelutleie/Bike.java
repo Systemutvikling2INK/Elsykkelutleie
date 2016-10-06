@@ -10,7 +10,7 @@ public class Bike {
 
     private int id;
     private double batteryPercentage;
-    private boolean inUse = false; //Is set to true if the user booked a bike, and within 30minutes claimed the it.
+    private boolean inUse; //Is set to true if the user booked a bike, and within 30minutes claimed the it.
     private Booking booking;
 
     public Bike() {
@@ -38,17 +38,58 @@ public class Bike {
         this.batteryPercentage = batteryPercentage;
     }
 
-    public boolean getInUse() {
+    public boolean isInUse() {
         return inUse;
+    }
+
+    public Booking getBooking() {
+        return booking;
+    }
+
+    public void setBooking(Booking booking) {
+        this.booking = booking;
     }
 
     public void setInUse(boolean use) {
         inUse = use;
     }
 
-    public void reserveBike() {
-        Date reservationDate = new Date();
-        booking = new Booking(reservationDate, generateRandomCode());
+    public String getReservationCode() {
+        return booking.getCode();
+    }
+
+    public boolean getInUse() {
+        if (booking == null && !inUse) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean reserveBike() {
+        if (booking == null) {
+            Date reservationDate = new Date();
+            booking = new Booking(reservationDate, generateRandomCode());
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean receiveBike(String bikeCode) {
+        if (bikeCode.equals(getReservationCode())) {
+            inUse = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void deliverBackBike() {
+        if (inUse) {
+            inUse = false;
+            booking = null;
+        }
     }
 
     private final String[] chars = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C",

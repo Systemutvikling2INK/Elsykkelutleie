@@ -1,13 +1,24 @@
 .navigationbar {
-    background-color: #3ea5bc;/*#afd2ec;*/
+    background-color: #3675c6;/*#3ea5bc;/*#afd2ec;*/
+    /*RØD: #d55757*/
+    border: 0px;
+    border-radius: 0px;
 }
 
-.svarttekst {
-    color: black;
+.navbar-default .navbar-brand {
+    color: white;
 }
 
-#svarttekst2 {
-    color: black;
+.navbar-default .navbar-brand:hover {
+    color: #b0b0b0;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #b0b0b0;
 }
 
 #bear-logo {

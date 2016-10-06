@@ -58,11 +58,18 @@ public class Parking {
     }
 
     public Bike getBike(int id) {
-        if (bikes.get(id) != null) {
+        /*if (bikes.get(id) != null) {
             return bikes.get(id);
         } else {
             return null;
+        }*/
+        for (int i = 0; i < bikes.size(); i++) {
+            if (bikes.get(i).getId() == id) {
+                System.out.println(bikes.get(i).getInUse());
+                return bikes.get(i);
+            }
         }
+        return null;
     }
 
     public void addBike(Bike bike) { //TODO:boolean?

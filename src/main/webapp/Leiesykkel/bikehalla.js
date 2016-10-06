@@ -2,8 +2,6 @@ $(document).ready(function() {
 
     //Laste inn .parking-selection items:
     var parkingJSON = $.getJSON("/rest/parking/", function(data) {
-        //alert(data.length);
-
        for(var i = 0; i < data.length; i++) {
            $(".parking-selection").append('<option value="' + data[i].name+ '">' + data[i].name + '</option>');
            //$(".parking-selection").selectpicker("refresh");
@@ -78,20 +76,23 @@ $(document).ready(function() {
 
       $(".rentbike").click(function() {
           //alert($(this).attr("id").split("bike")[1]);
-          var sykkelNr = $(this).attr("id").split("bike")[1];
+          selectedBike = $(this).attr("id").split("bike")[1];
           $(".heisann").fadeIn();
-          $("#informasjon-res").html("Vil du reservere sykkel med id: " + sykkelNr + "?");
+          $("#informasjon-res").html("Vil du reservere sykkel med id: " + selectedBike + "?");
           window.location = "#mørkbakgrunn";
       });
   };
-
-
+  var selectedBike = -1;
 
     var selectedLocation = $(".parking-selection").prop('selectedIndex') + 1;
 
+    if ($(".parking-selection").prop('selectedIndex') === -1) {
+        selectedLocation = 1;
+    }
+
+
     $(".parking-selection").on('change', function() {
         selectedLocation = $(".parking-selection").prop('selectedIndex') + 1;
-
         var syklerJSON = $.getJSON('/rest/parking/' + selectedLocation + '/bikes', function (data) {
             endreSykler(data);
         });
@@ -101,7 +102,18 @@ $(document).ready(function() {
 
     $("#buttonja").click(function() {
         window.location = "#";
-        alert("Din sykkelkode er: " + Math.ceil(Math.random() * 12345));
+        //alert("Din sykkelkode er: " + Math.ceil(Math.random() * 12345));
+        //alert("du trykket på: " + selectedBike);
+        $.ajax({
+            type: "POST",
+            url: "/rest/parking/" + selectedLocation + "/bikes/" + selectedBike +"/reserver",
+            success: function(data) {
+                alert("Du har reservert sykkel nummer " + selectedBike + ", og kode for å hente den er: " + data);
+            },
+            error: function () {
+                alert("Noe feil skjedde");
+            }
+        });
     });
 
     $("#buttonnei").click(function() {

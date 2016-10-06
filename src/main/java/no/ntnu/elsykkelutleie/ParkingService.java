@@ -99,16 +99,54 @@ public class ParkingService {
 
     @POST
     @Path("/{id}/bikes/{bikeId}/reserver")
-    public void reserverBike(@PathParam("id") int id, @PathParam("bikeId") int bikeId) {
+    public String reserverBike(@PathParam("id") int id, @PathParam("bikeId") int bikeId) {
         if (parkingMap.get(id) != null && parkingMap.get(id).getBike(bikeId) != null) {
             Bike biken = parkingMap.get(id).getBike(bikeId);
-            if (biken.getInUse()) {
+            if (!biken.getInUse()) {
                 parkingMap.get(id).getBike(bikeId).reserveBike();
+                return parkingMap.get(id).getBike(bikeId).getReservationCode();
             } else {
                 throw new javax.ws.rs.NotFoundException("Bike is already in use :(");
             }
 
         }
+        return "Error, something wrong happened";
+    }
+
+    @POST
+    @Path("/{id}/bikes/{bikeId}/hent/{henteKode}")
+    public void hentSykkel(@PathParam("id") int id, @PathParam("bikeId") int bikeId, @PathParam("henteKode") String henteKode) {
+        if (parkingMap.get(id) != null && parkingMap.get(id).getBike(bikeId) != null) { //TODO:metode for å sjekke det i denne if setningen
+            Bike biken = parkingMap.get(id).getBike(bikeId);
+            if (!biken.isInUse()) { //TODO: inuse, getinuse
+                biken.receiveBike(henteKode); //TODO:// FIXME: 06.10.2016 boolean
+            }
+        }
+    }
+
+    @POST
+    @Path("/{id}/bikes/{bikeId}/levertilbake")
+    public void leverTilbake(@PathParam("id") int id, @PathParam("bikeId") int bikeId) {
+        if (parkingMap.get(id) != null && parkingMap.get(id).getBike(bikeId) != null) {
+            Bike biken = parkingMap.get(id).getBike(bikeId);
+            biken.deliverBackBike();
+        }
+    }
+
+    @GET
+    @Path("/{id}/bikes/{bikeId}/kode")
+    public String getDeliveryCode(@PathParam("id") int id, @PathParam("bikeId") int bikeId) {
+        if (parkingMap.get(id) != null && parkingMap.get(id).getBike(bikeId) != null) {
+            Bike biken = parkingMap.get(id).getBike(bikeId);
+
+            System.out.println(biken.isInUse());
+            System.out.println(biken.getReservationCode());
+
+            if (biken.getBooking() != null) {
+                return biken.getReservationCode();
+            }
+        }
+        return "Sykkelen er ikke leid ut.";
     }
 
     /*@DELETE
