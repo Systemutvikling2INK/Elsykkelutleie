@@ -1,4 +1,4 @@
-package case1;
+package no.ntnu.elsykkelutleie;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;

@@ -1,4 +1,4 @@
-package case1;
+package no.ntnu.elsykkelutleie;
 
 /**
  * Created by Ingunn on 28.09.2016.
