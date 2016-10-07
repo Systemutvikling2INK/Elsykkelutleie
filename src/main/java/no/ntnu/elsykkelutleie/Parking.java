@@ -65,7 +65,6 @@ public class Parking {
         }*/
         for (int i = 0; i < bikes.size(); i++) {
             if (bikes.get(i).getId() == id) {
-                System.out.println(bikes.get(i).getInUse());
                 return bikes.get(i);
             }
         }

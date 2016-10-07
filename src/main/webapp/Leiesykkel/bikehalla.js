@@ -109,6 +109,9 @@ $(document).ready(function() {
             url: "/rest/parking/" + selectedLocation + "/bikes/" + selectedBike +"/reserver",
             success: function(data) {
                 alert("Du har reservert sykkel nummer " + selectedBike + ", og kode for å hente den er: " + data);
+                //button-text
+                //alert($("#bike" + selectedBike).find("reservasjonButton").attr();
+                $("#bike" + selectedBike).fadeOut();
             },
             error: function () {
                 alert("Noe feil skjedde");
