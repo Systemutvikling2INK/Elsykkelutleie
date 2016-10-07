@@ -14,6 +14,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Ingunn on 28.09.2016.
@@ -24,6 +26,7 @@ public class UserService {
 
     String fileLocation = "C:\\Users\\Knut\\Documents\\GitHub\\Elsykkelutleie\\src\\main\\webapp\\Login\\Login.json";
 
+    private static Map<Integer, User> users = new HashMap<Integer, User>();
     //[{"username": "heia", "password": "hehh"}, {"username": "admin", "password": "admin"}]
 
     @POST
