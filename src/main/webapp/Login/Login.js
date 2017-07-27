@@ -87,5 +87,10 @@ $(document).ready(function() {
 
     });
 
+    $("#registrer").click(function() {
+        $("#login-overlay").fadeOut();
+        $("#reg-overlay").fadeIn();
+    });
+
 });
 

@@ -19,3 +19,12 @@
         width: 20%;
     }
 }
+/* TODO:få dette til å virke?? */
+#reg-overlay {
+    animation: fadeIn 2s;
+    margin-top: 10%;
+}
+@keyframes fadein {
+    from {margin-top: 20%;}
+    to {margin-top: 10%;}
+}

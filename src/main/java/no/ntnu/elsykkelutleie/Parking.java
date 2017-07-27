@@ -14,6 +14,7 @@ public class Parking {
     private String name;
     //private Map<Integer, Bike> bikes = new HashMap<Integer, Bike>();
     private ArrayList<Bike> bikes = new ArrayList<Bike>();
+    //TODO; geolokasjon til parkeringsplassene, MAZEMAP??
 
     //Tom for at den kan kjøre wtf ;P
     public Parking() {
